@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'yum-remi::php55'
+
 node['php55']['packages'].each do |pkg|
   package pkg do
     action :upgrade
