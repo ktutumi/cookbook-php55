@@ -18,7 +18,7 @@ template "#{node['php']['conf_dir']}/php.ini" do
   group 'root'
   mode 0644
 
-  %w{apache2 nginx}.each do |svc|
+  %w{apache2 php-fpm}.each do |svc|
     if node.recipe? svc
       notifies :reload, "service[#{svc}]"
     end

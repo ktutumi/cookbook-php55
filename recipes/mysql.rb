@@ -11,7 +11,7 @@ package 'php-mysqlnd' do
   action :upgrade
 
   # TODO 共通化
-  %w{apache2 nginx}.each do |svc|
+  %w{apache2 php-fpm}.each do |svc|
     if node.recipe? svc
       notifies :reload, "service[#{svc}]"
     end
