@@ -1,13 +1,14 @@
 #
 # Cookbook Name:: php55
-# Recipe:: mysql
+# Recipe:: module_pgsql
 #
 # Copyright 2014, YOUR_COMPANY_NAME
 #
 # All rights reserved - Do Not Redistribute
 #
 
-package 'php-mysqlnd' do
+
+package 'php-pgsql' do
   action :upgrade
 
   # TODO 共通化
@@ -17,4 +18,3 @@ package 'php-mysqlnd' do
     end
   end
 end
-
