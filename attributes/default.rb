@@ -30,22 +30,25 @@ default['php55']['packages'] = [
 ]
 
 # php.ini
-default['php55']['short_open_tag']                = 'On'
-default['php55']['timezone']                      = 'Asia/Tokyo'
-default['php55']['output_handler']                = ''
-default['php55']['max_execution_time']            = 30
-default['php55']['max_input_time']                = 60
-default['php55']['memory_limit']                  = 128
-default['php55']['error_reporting']               = 'E_ALL & ~E_DEPRECATED & ~E_STRICT'
-default['php55']['display_errors']                = 'Off'
-default['php55']['post_max_size']                 = 8
-default['php55']['upload_max_filesize']           = 2
-default['php55']['mbstring.language']             = 'neutral'
-default['php55']['mbstring.internal_encoding']    = ''
-default['php55']['mbstring.http_input']           = 'pass'
-default['php55']['mbstring.http_output']          = 'pass'
-default['php55']['mbstring.encoding_translation'] = 'Off'
-default['php55']['mbstring.detect_order']         = ''
-default['php55']['mbstring.substitute_character'] = ''
-default['php55']['mbstring.func_overload']        = 0
-default['php55']['mbstring.strict_detection']     = 'Off'
+default['php']['directives'] = {
+  'short_open_tag'                => 'On',
+  'date.timezone'                 => 'Asia/Tokyo',
+  'output_handler'                => '',
+  'max_execution_time'            => 30,
+  'max_input_time'                => 60,
+  'memory_limit'                  => '128M',
+  'error_reporting'               => 'E_ALL & ~E_DEPRECATED & ~E_STRICT',
+  'display_errors'                => 'Off',
+  'post_max_size'                 => '8M',
+  'upload_max_filesize'           => '2M',
+  'mbstring.language'             => 'neutral',
+  'mbstring.internal_encoding'    => '',
+  'mbstring.http_input'           => 'pass',
+  'mbstring.http_output'          => 'pass',
+  'mbstring.encoding_translation' => 'Off',
+  'mbstring.detect_order'         => '',
+  'mbstring.substitute_character' => '',
+  'mbstring.func_overload'        => 0,
+  'mbstring.strict_detection'     => 'Off'
+}
+

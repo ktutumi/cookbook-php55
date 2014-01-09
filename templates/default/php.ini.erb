@@ -209,7 +209,7 @@ engine = On
 ; Development Value: Off
 ; Production Value: Off
 ; http://php.net/short-open-tag
-short_open_tag = <%= node['php55']['short_open_tag'] %>
+short_open_tag = <%= node['php']['directives']['short_open_tag'] %>
 
 ; Allow ASP-style <%% %> tags.
 ; http://php.net/asp-tags
@@ -256,7 +256,7 @@ output_buffering = 4096
 ; Note: output_handler must be empty if this is set 'On' !!!!
 ;   Instead you must use zlib.output_handler.
 ; http://php.net/output-handler
-output_handler = <%= node['php55']['output_handler'] %>
+output_handler = <%= node['php']['directives']['output_handler'] %>
 
 ; Transparent output compression using the zlib library
 ; Valid values for this option are 'off', 'on', or a specific buffer size
@@ -382,7 +382,7 @@ expose_php = On
 ; Maximum execution time of each script, in seconds
 ; http://php.net/max-execution-time
 ; Note: This directive is hardcoded to 0 for the CLI SAPI
-max_execution_time = <%= node['php55']['max_execution_time'] %>
+max_execution_time = <%= node['php']['directives']['max_execution_time'] %>
 
 ; Maximum amount of time each script may spend parsing request data. It's a good
 ; idea to limit this time on productions servers in order to eliminate unexpectedly
@@ -392,7 +392,7 @@ max_execution_time = <%= node['php55']['max_execution_time'] %>
 ; Development Value: 60 (60 seconds)
 ; Production Value: 60 (60 seconds)
 ; http://php.net/max-input-time
-max_input_time = <%= node['php55']['max_input_time'] %>
+max_input_time = <%= node['php']['directives']['max_input_time'] %>
 
 ; Maximum input variable nesting level
 ; http://php.net/max-input-nesting-level
@@ -403,7 +403,7 @@ max_input_time = <%= node['php55']['max_input_time'] %>
 
 ; Maximum amount of memory a script may consume (128MB)
 ; http://php.net/memory-limit
-memory_limit = <%= node['php55']['memory_limit'] %>M
+memory_limit = <%= node['php']['directives']['memory_limit'] %>
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Error handling and logging ;
@@ -459,7 +459,7 @@ memory_limit = <%= node['php55']['memory_limit'] %>M
 ; Development Value: E_ALL
 ; Production Value: E_ALL & ~E_DEPRECATED & ~E_STRICT
 ; http://php.net/error-reporting
-error_reporting = <%= node['php55']['error_reporting'] %>
+error_reporting = <%= node['php']['directives']['error_reporting'] %>
 
 ; This directive controls whether or not and where PHP will output errors,
 ; notices and warnings too. Error output is very useful during development, but
@@ -476,7 +476,7 @@ error_reporting = <%= node['php55']['error_reporting'] %>
 ; Development Value: On
 ; Production Value: Off
 ; http://php.net/display-errors
-display_errors = <%= node['php55']['display_errors'] %>
+display_errors = <%= node['php']['directives']['display_errors'] %>
 
 ; The display of errors which occur during PHP's startup sequence are handled
 ; separately from display_errors. PHP's default behavior is to suppress those
@@ -670,7 +670,7 @@ auto_globals_jit = On
 ; Its value may be 0 to disable the limit. It is ignored if POST data reading
 ; is disabled through enable_post_data_reading.
 ; http://php.net/post-max-size
-post_max_size = <%= node['php55']['post_max_size'] %>M
+post_max_size = <%= node['php']['directives']['post_max_size'] %>
 
 ; Automatically add files before PHP document.
 ; http://php.net/auto-prepend-file
@@ -802,7 +802,7 @@ file_uploads = On
 
 ; Maximum allowed size for uploaded files.
 ; http://php.net/upload-max-filesize
-upload_max_filesize = <%= node['php55']['upload_max_filesize'] %>M
+upload_max_filesize = <%= node['php']['directives']['upload_max_filesize'] %>
 
 ; Maximum number of files that can be uploaded via a single request
 max_file_uploads = 20
@@ -880,7 +880,7 @@ cli_server.color = On
 [Date]
 ; Defines the default timezone used by the date functions
 ; http://php.net/date.timezone
-date.timezone = <%= node['php55']['timezone'] %>
+date.timezone = <%= node['php']['directives']['date.timezone'] %>
 
 ; http://php.net/date.default-latitude
 ;date.default_latitude = 31.7667
@@ -1663,25 +1663,25 @@ mssql.secure_connection = Off
 ; language for internal character representation.
 ; http://php.net/mbstring.language
 ;mbstring.language = Japanese
-mbstring.language = <%= node['php55']['mbstring.language'] %>
+mbstring.language = <%= node['php']['directives']['mbstring.language'] %>
 
 ; internal/script encoding.
 ; Some encoding cannot work as internal encoding.
 ; (e.g. SJIS, BIG5, ISO-2022-*)
 ; http://php.net/mbstring.internal-encoding
 ;mbstring.internal_encoding = UTF-8
-mbstring.internal_encoding = <%= node['php55']['mbstring.internal_encoding'] %>
+mbstring.internal_encoding = <%= node['php']['directives']['mbstring.internal_encoding'] %>
 
 ; http input encoding.
 ; http://php.net/mbstring.http-input
 ;mbstring.http_input = UTF-8
-mbstring.http_input = <%= node['php55']['mbstring.http_input'] %>
+mbstring.http_input = <%= node['php']['directives']['mbstring.http_input'] %>
 
 ; http output encoding. mb_output_handler must be
 ; registered as output buffer to function
 ; http://php.net/mbstring.http-output
 ;mbstring.http_output = pass
-mbstring.http_output = <%= node['php55']['mbstring.http_output'] %>
+mbstring.http_output = <%= node['php']['directives']['mbstring.http_output'] %>
 
 ; enable automatic encoding translation according to
 ; mbstring.internal_encoding setting. Input chars are
@@ -1690,19 +1690,19 @@ mbstring.http_output = <%= node['php55']['mbstring.http_output'] %>
 ;       portable libs/applications.
 ; http://php.net/mbstring.encoding-translation
 ;mbstring.encoding_translation = Off
-mbstring.encoding_translation = <%= node['php55']['mbstring.encoding_translation'] %>
+mbstring.encoding_translation = <%= node['php']['directives']['mbstring.encoding_translation'] %>
 
 ; automatic encoding detection order.
 ; auto means
 ; http://php.net/mbstring.detect-order
 ;mbstring.detect_order = auto
-mbstring.detect_order = <%= node['php55']['mbstring.detect_order'] %>
+mbstring.detect_order = <%= node['php']['directives']['mbstring.detect_order'] %>
 
 ; substitute_character used when character cannot be converted
 ; one from another
 ; http://php.net/mbstring.substitute-character
 ;mbstring.substitute_character = none
-mbstring.substitute_character = <%= node['php55']['mbstring.substitute_character'] %>
+mbstring.substitute_character = <%= node['php']['directives']['mbstring.substitute_character'] %>
 
 ; overload(replace) single byte functions by mbstring functions.
 ; mail(), ereg(), etc are overloaded by mb_send_mail(), mb_ereg(),
@@ -1714,11 +1714,11 @@ mbstring.substitute_character = <%= node['php55']['mbstring.substitute_character
 ; 4: Overload ereg*() functions
 ; http://php.net/mbstring.func-overload
 ;mbstring.func_overload = 0
-mbstring.func_overload = <%= node['php55']['mbstring.func_overload'] %>
+mbstring.func_overload = <%= node['php']['directives']['mbstring.func_overload'] %>
 
 ; enable strict encoding detection.
 ;mbstring.strict_detection = On
-mbstring.strict_detection = <%= node['php55']['mbstring.strict_detection'] %>
+mbstring.strict_detection = <%= node['php']['directives']['mbstring.strict_detection'] %>
 
 ; This directive specifies the regex pattern of content types for which mb_output_handler()
 ; is activated.
